@@ -9,14 +9,15 @@ using namespace std;
 
 class Shape {
     public :
+    //constructors :
         Shape();
         Shape(string const& name, Color const& color);
         virtual ~Shape();
 
         virtual double area() const = 0;
         virtual double volume() const = 0;
-        string name() const;
-        Color color() const;
+        string get_name() const;
+        Color get_color() const;
 
         virtual ostream& print(ostream ost) const;
 
