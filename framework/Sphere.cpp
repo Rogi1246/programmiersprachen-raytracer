@@ -10,7 +10,7 @@
 
 using namespace std;
 
-//Child Constructors
+//Child Constructors & Destructor
 //Standard Constructor
 Sphere::Sphere() :
     Shape{string ("Sphere"), Color{0.0f, 0.0f, 0.0f}},
@@ -36,7 +36,31 @@ Sphere::Sphere(glm::vec3 const& center, double const& radius, string const& name
     center_{center}
 {
     cout << "Costum constructor w/ name, color" << '\n';
+};
+
+//Destructor
+Sphere::~Sphere() {
+    cout << "Destructor" << '\n';
+};
+
+glm::vec3 const& Sphere::get_center() const {
+    return center_;
 }
+
+double Sphere::get_radius() const{
+    return radius_;
+}
+
+double Sphere::area() const {
+    double ar = 4*M_PI*pow(radius_, 2);
+    return ar;
+}
+
+double Sphere::volume() const {
+    double vol = (4.0/3.0)*M_PI*pow(radius_,3);
+    return vol;
+}
+
 
 
 
