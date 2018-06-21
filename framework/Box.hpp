@@ -17,6 +17,8 @@ class Box : public Shape {
         Box(glm::vec3 const& min, glm::vec3 const& max);
         Box(glm::vec3 const& min, glm::vec3 const& max, string const& name, Color const& color);
 
+        ~Box();
+
         glm::vec3 get_min() const;
         glm::vec3 get_max() const;
 

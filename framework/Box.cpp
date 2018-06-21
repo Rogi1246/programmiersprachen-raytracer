@@ -34,6 +34,10 @@ Box::Box(glm::vec3 const &min, glm::vec3 const &max, string const &name, Color c
     cout << "Costum constructor w/ name, color" << '\n';
 };
 
+Box::~Box() {
+    cout << "Destructor" << '\n';
+};
+
 glm::vec3 const& get_min() const {
     return min_;
 }
