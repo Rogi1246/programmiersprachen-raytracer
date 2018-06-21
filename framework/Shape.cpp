@@ -29,7 +29,9 @@ Color Shape::get_color() const {
 };
 
 ostream& Shape::print(ostream& ost)const {
-    return ost << "Shapename : " << name_ << '\n' << "Shapecolor : " << color << '\n';
+    ost << "Shapename : " << name_ << '\n';
+    ost << "Shapecolor : " << color_ << '\n';
+    return ost;
 }
 
 ostream& operator << (ostream& ost, Shape const& sh) {
