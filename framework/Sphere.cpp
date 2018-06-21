@@ -61,6 +61,18 @@ double Sphere::volume() const {
     return vol;
 }
 
+ostream& Sphere::print(ostream ost) const{
+    Shape::print(ost);
+    ost << "Center : " << center_.x << ", " << center_.y << ", " << center_.z << '\n';
+    ost << "Radius : " << radius_ << '\n';
+    ost << "Volume : " << volume() << '\n';
+    ost << "Area : "   << area()    << '\n';
 
+    return ost;
+}
+
+bool Sphere::intersect(Ray const& ray, float& distance) const{
+    return glm::intersectRaySphere(ray.origin, ray.direction, center_, radius_*radius_, distance);
+}
 
 
