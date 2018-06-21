@@ -20,6 +20,10 @@ Shape::Shape(string const& name, Color const& color) :
     cout << "Costum constructor" << '\n';
 };
 
+Shape::~Shape(){
+    cout << "Destructor" << '\n';
+};
+
 string Shape::get_name() const {
     return name_;
 };
