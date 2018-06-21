@@ -34,6 +34,7 @@ Box::Box(glm::vec3 const &min, glm::vec3 const &max, string const &name, Color c
     cout << "Costum constructor w/ name, color" << '\n';
 };
 
+//Destructor
 Box::~Box() {
     cout << "Destructor" << '\n';
 };
@@ -46,6 +47,7 @@ glm::vec3 const& get_max() const {
     return max_;
 }
 
+//overriding methods of base class (area&volume)
 double Box::area() const{
 
     double length{abs(max_.x - min_.x)};
@@ -55,3 +57,22 @@ double Box::area() const{
     return 2*(length*width) + 2*(length*height) + 2*(height*width);
 }
 
+double Box::volume() const {
+
+    double length{abs(max_.x - min_.x)};
+    double width {abs(max_.y - min_.y)};
+    double height{abs(max_.z - min_.z)};
+
+    return length*width*height;
+}
+
+ostream& Box::print(ostream& ost) const {
+
+    Shape::print(ost);
+    ost << "Minimum: " << min_.x << ", " << min_.y << ", " << mix_.z << '\n';
+    ost << "Maximum: " << max_.x << ", " << max_.y << ", " << max_.z << '\n';
+    ost << "Area: "    << area() << '\n';
+    ost << "Volume: "  << volume() << '\n';
+
+    return ost;
+}
