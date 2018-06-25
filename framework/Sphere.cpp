@@ -66,7 +66,7 @@ ostream& Sphere::print(ostream& ost) const{
     ost << "Center : " << center_.x << ", " << center_.y << ", " << center_.z << '\n';
     ost << "Radius : " << radius_ << '\n';
     ost << "Volume : " << volume() << '\n';
-    ost << "Area : "   << area()    << '\n';
+    ost << "Area   : "   << area()    << '\n';
 
     return ost;
 }

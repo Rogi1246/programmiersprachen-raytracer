@@ -72,7 +72,7 @@ ostream& Box::print(ostream& ost) const {
     Shape::print(ost);
     ost << "Minimum: " << min_.x << ", " << min_.y << ", " << min_.z << '\n';
     ost << "Maximum: " << max_.x << ", " << max_.y << ", " << max_.z << '\n';
-    ost << "Area: "    << area() << '\n';
+    ost << "Area:   "    << area() << '\n';
     ost << "Volume: "  << volume() << '\n';
 
     return ost;
