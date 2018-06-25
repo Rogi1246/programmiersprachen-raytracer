@@ -19,7 +19,7 @@ class Shape {
         string get_name() const;
         Color get_color() const;
 
-        virtual ostream& print(ostream ost) const;
+        virtual ostream& print(ostream& ost) const;
 
     private:
         string name_;
