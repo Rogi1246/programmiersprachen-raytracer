@@ -14,7 +14,7 @@ class Shape {
         Shape(string const& name, Color const& color);
         virtual ~Shape();
 
-        virtual double area() const = 0;
+        virtual double area() const = 0; //pure virtual
         virtual double volume() const = 0;
         string get_name() const;
         Color get_color() const;
