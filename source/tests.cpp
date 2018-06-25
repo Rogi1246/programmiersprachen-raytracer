@@ -73,15 +73,15 @@ TEST_CASE(" Constructors", "[Shape(s)]")
   double radius{5.5};
   Color color{1.0f, 1.0f, 0.0f};
 
-
-  Shape zero{};
+  //try for a standard constructor
+  //Shape zero{};
   Sphere s0{center, radius, "Sphere0", color};
   Box b0{center, max}; // center for minimum
 
-  REQUIRE(zero.get_name().compare("unnamed") == 0.0);
+  /*REQUIRE(zero.get_name().compare("unnamed") == 0.0);
   REQUIRE(zero.get_color().r == 0.0f);
   REQUIRE(zero.get_color().g == 0.0f);
-  REQUIRE(zero.get_color().b == 0.0f);
+  REQUIRE(zero.get_color().b == 0.0f);*/
 
   REQUIRE(s0.get_center().x == 0.0f);
   REQUIRE(s0.get_center().y == 0.0f);
@@ -101,8 +101,8 @@ TEST_CASE(" Sphere_methods", "[Sphere]")
     double radius{3.5f};
     Sphere s0{center, radius};
 
-    REQUIRE(s0.volume() == Approx(100.0));
-    REQUIRE(s0.area() == Approx(100.0));
+    REQUIRE(s0.volume() == Approx(179.594));
+    REQUIRE(s0.area() == Approx(153.938));
 
 }
 
@@ -112,8 +112,8 @@ TEST_CASE(" Box_methods", "[Box]")
     glm::vec3 max{1.0f, 2.0f, 1.0f};
     Box b0{min, max};
 
-    REQUIRE(b0.volume() == Approx(100.0));
-    REQUIRE(b0.area() == Approx(100.0));
+    REQUIRE(b0.volume() == Approx(2.0));
+    REQUIRE(b0.area() == Approx(10.0));
 
 }
 

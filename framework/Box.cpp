@@ -8,13 +8,14 @@
 
 //Child Constructors
 //Standard Constructor
-Box::Box() :
-    Shape{string("Box"), Color{0.0f, 0.0f, 0.0f}},
-    min_{{0.0f, 0.0f, 0.0f}},
-    max_{{1.0f, 1.0f, 1.0f}}
+/*Box::Box() :
+    Shape{},
+    glm::vec3 const &min_{{0.0f, 0.0f, 0.0f}},
+    glm::vec3 const &max_{{1.0f, 1.0f, 1.0f}}
 {
     cout << "Standard constructor" << '\n';
 };
+*/
 
 //Costum Constructor 1
 Box::Box(glm::vec3 const &min, glm::vec3 const &max) :
@@ -39,11 +40,11 @@ Box::~Box() {
     cout << "Destructor" << '\n';
 };
 
-glm::vec3 const& get_min() const {
+glm::vec3 Box::get_min() const {
     return min_;
 }
 
-glm::vec3 const& get_max() const {
+glm::vec3 Box::get_max() const {
     return max_;
 }
 
@@ -69,7 +70,7 @@ double Box::volume() const {
 ostream& Box::print(ostream& ost) const {
 
     Shape::print(ost);
-    ost << "Minimum: " << min_.x << ", " << min_.y << ", " << mix_.z << '\n';
+    ost << "Minimum: " << min_.x << ", " << min_.y << ", " << min_.z << '\n';
     ost << "Maximum: " << max_.x << ", " << max_.y << ", " << max_.z << '\n';
     ost << "Area: "    << area() << '\n';
     ost << "Volume: "  << volume() << '\n';

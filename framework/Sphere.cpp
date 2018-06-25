@@ -12,13 +12,13 @@ using namespace std;
 
 //Child Constructors & Destructor
 //Standard Constructor
-Sphere::Sphere() :
+/*Sphere::Sphere() :
     Shape{string ("Sphere"), Color{0.0f, 0.0f, 0.0f}},
     center_(glm::vec3{1.0f, 1.0f, 1.0f}),
     radius_(1.0f)
 {
     cout << "Standard constructor" << '\n';
-};
+};*/
 
 //Costum Constructor 1
 Sphere::Sphere(glm::vec3 const& center, double const& radius) :
@@ -43,7 +43,7 @@ Sphere::~Sphere() {
     cout << "Destructor" << '\n';
 };
 
-glm::vec3 const& Sphere::get_center() const {
+glm::vec3 Sphere::get_center() const {
     return center_;
 }
 
@@ -61,7 +61,7 @@ double Sphere::volume() const {
     return vol;
 }
 
-ostream& Sphere::print(ostream ost) const{
+ostream& Sphere::print(ostream& ost) const{
     Shape::print(ost);
     ost << "Center : " << center_.x << ", " << center_.y << ", " << center_.z << '\n';
     ost << "Radius : " << radius_ << '\n';

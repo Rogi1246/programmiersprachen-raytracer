@@ -13,7 +13,7 @@ using namespace std;
 class Box : public Shape {
 
     public :
-        Box();
+        //Box();
         Box(glm::vec3 const& min, glm::vec3 const& max);
         Box(glm::vec3 const& min, glm::vec3 const& max, string const& name, Color const& color);
 
