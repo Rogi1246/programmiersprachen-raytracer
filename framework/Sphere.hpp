@@ -21,8 +21,8 @@ class Sphere : public Shape {
 
         glm::vec3 const& get_center() const ;
         double get_radius();
-        double get_volume() const override ;
-        double get_area() const override ;
+        double volume() const override ;
+        double area() const override ;
 
         ostream& print(ostream& ost) const override ;
 
